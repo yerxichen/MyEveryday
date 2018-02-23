@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hwysapp.ui.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:bootstrapText="手机号"
+                app:roundedCorners="false"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h5" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/ed1"
+                android:inputType="phone"
+                android:maxLength="11"
+                app:bootstrapSize="md"
+                android:hint="请输入您的手机号码"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:bootstrapText="用户名"
+                app:roundedCorners="false"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h5" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/ed2"
+                android:hint="请输入您的名字"
+                app:bootstrapSize="md"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:bootstrapText="密    码"
+                app:roundedCorners="false"
+                app:bootstrapBrand="success"
+                app:bootstrapHeading="h5" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/ed3"
+                android:hint="请输入您的密码"
+                app:bootstrapSize="md"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+           <com.beardedhen.androidbootstrap.BootstrapButton
+               android:id="@+id/btn_zc"
+               android:text="注        册"
+               app:bootstrapSize="md"
+               app:bootstrapBrand="primary"
+               android:layout_width="match_parent"
+               android:layout_height="50dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hwysapp.ui.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:gravity="center"
+                style="@style/title_text"
+                android:text="手机号"
+
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+
+            <EditText
+                style="@style/title_text"
+                android:id="@+id/ed1"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:hint="请输入您的手机号码"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                style="@style/title_text"
+                android:text="密    码"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/ed2"
+                android:hint="请输入您的密码"
+                style="@style/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+           <Button
+               android:id="@+id/btn_lg"
+               android:text="登        录"
+               style="@style/title_text"
+               android:layout_width="match_parent"
+               android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv1"
+                style="@style/title_text"
+                android:text="没有账号？点击这里注册"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

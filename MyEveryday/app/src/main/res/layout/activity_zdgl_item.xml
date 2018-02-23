@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:text="第一"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="bottom|right"
+                android:text="第二"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <TextView
+                android:text="第三"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:id="@+id/tv3"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="35dp" />
+            <LinearLayout
+                android:gravity="center_vertical|right"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp">
+                <com.beardedhen.androidbootstrap.BootstrapLabel
+                    android:gravity="center"
+                    android:id="@+id/tv1"
+                    android:layout_width="35dp"
+                    android:layout_height="25dp"
+                    app:bootstrapBrand="info"
+                    app:bootstrapHeading="h6"
+                    app:roundedCorners="true"
+                    android:text="第四"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

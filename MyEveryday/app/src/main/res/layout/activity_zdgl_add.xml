@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="代        码" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:id="@+id/ed1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            app:bootstrapSize="md"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="代码类别" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+
+            android:id="@+id/ed2"
+            android:hint="输入字典代码类别（参照字典列表）"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            app:bootstrapSize="md"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="代码名称" />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:hint="输入字典代码名称（参照字典列表）"
+            android:id="@+id/ed3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            app:roundedCorners="true"
+            app:bootstrapSize="md"
+            app:bootstrapBrand="info"
+            />
+    </LinearLayout>
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/subButton"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="提        交"
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        />
+
+</LinearLayout>

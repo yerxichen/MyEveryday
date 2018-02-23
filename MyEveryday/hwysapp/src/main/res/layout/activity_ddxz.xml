@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hwysapp.ui.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                app:bootstrapText="地点名称"
+                app:roundedCorners="false"
+                app:bootstrapBrand="secondary"
+                app:bootstrapHeading="h4" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/ed"
+                android:inputType="text"
+                android:hint="请输入地址"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+           <com.beardedhen.androidbootstrap.BootstrapButton
+               android:id="@+id/btn"
+               android:text="添        加"
+               android:textSize="30sp"
+               app:bootstrapSize="lg"
+               app:bootstrapBrand="primary"
+               android:layout_width="match_parent"
+               android:layout_height="50dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

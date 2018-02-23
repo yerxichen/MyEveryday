@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_zb"
+        android:title="账本" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_glzx"
+        android:title="管理" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_grzx"
+        android:title="个人中心" />
+
+</menu>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hwysapp.ui.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                app:bootstrapText="运输行程"
+                app:roundedCorners="false"
+                app:bootstrapBrand="secondary"
+                app:bootstrapHeading="h5" />
+            <LinearLayout
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <com.beardedhen.androidbootstrap.BootstrapButton
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="添加新地址+"
+                    app:bootstrapBrand="danger"
+                    app:bootstrapSize="md"
+                    app:buttonMode="regular"
+                    app:showOutline="true"
+                    app:roundedCorners="false"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                style="@style/title_text"
+                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:bootstrapText="从"/>
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"></Spinner>
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                style="@style/title_text"
+                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:bootstrapText="到"/>
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"></Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                app:bootstrapText="运输日期"
+                app:roundedCorners="false"
+                app:bootstrapBrand="secondary"
+                app:bootstrapHeading="h5" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapSize="md"
+                android:id="@+id/ed1"
+                android:inputType="text"
+                android:hint="点击选择日期"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:bootstrapBrand="secondary"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                app:bootstrapText="价        格"
+                app:roundedCorners="false"
+                app:bootstrapBrand="secondary"
+                app:bootstrapHeading="h5" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapSize="md"
+                android:id="@+id/ed2"
+                android:inputType="numberDecimal"
+                android:hint="输入价格(单位：元)"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <com.beardedhen.androidbootstrap.BootstrapLabel
+
+                android:layout_marginRight="5dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                app:bootstrapText="备        注"
+                app:roundedCorners="false"
+                app:bootstrapBrand="secondary"
+                app:bootstrapHeading="h5" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                app:bootstrapSize="lg"
+                android:gravity="top"
+                android:id="@+id/ed3"
+                android:inputType="textMultiLine"
+                android:maxLength="200"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+           <com.beardedhen.androidbootstrap.BootstrapButton
+               android:id="@+id/btn"
+               android:text="添        加"
+               app:bootstrapSize="md"
+               app:bootstrapBrand="primary"
+               android:layout_width="match_parent"
+               android:layout_height="50dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
