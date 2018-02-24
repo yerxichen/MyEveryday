@@ -7,10 +7,11 @@
     tools:context="com.example.hwysapp.ui.LoginActivity">
 
     <LinearLayout
+        android:layout_centerInParent="true"
         android:orientation="vertical"
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_margin="10dp"
 
@@ -56,13 +57,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_margin="10dp"
 
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-           <Button
+           <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                android:id="@+id/btn_lg"
                android:text="登        录"
                style="@style/title_text"

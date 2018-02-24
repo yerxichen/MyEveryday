@@ -1,5 +1,6 @@
 package com.example.hwysapp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -83,6 +84,9 @@ public class ZcActivity extends BaseActivity {
                             String flag=obj.getString("FLAG");
                             if(flag.equals("1")){
                                 showAlertDialog(obj.getString("DATA"));
+                                Intent in=new Intent(mContext,LoginActivity.class);
+                                startActivity(in);
+                                finish();
                             }else{
                                 showAlertDialog("注册失败,请联系管理员");
                             }

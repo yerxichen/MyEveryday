@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
@@ -26,7 +27,7 @@ public class LoginActivity extends BaseActivity {
     private Button btn_lg;
     private TextView tv1;
     private int cs=1;
-
+    private RelativeLayout relativeLayout;
     @Override
     public void initParms(Bundle parms) {
 
@@ -34,6 +35,8 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void bindView() {
+        relativeLayout=findViewById(R.id.relativeLayout);
+        relativeLayout.setVisibility(View.GONE);
         setView("登录",R.layout.activity_login);
     }
 

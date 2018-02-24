@@ -188,7 +188,7 @@
             android:layout_height="50dp">
            <com.beardedhen.androidbootstrap.BootstrapButton
                android:id="@+id/btn"
-               android:text="添        加"
+               android:text="提        交"
                app:roundedCorners="true"
                app:bootstrapSize="md"
                app:bootstrapBrand="primary"

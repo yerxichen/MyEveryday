@@ -8,6 +8,7 @@ import com.beardedhen.androidbootstrap.BootstrapEditText;
 import com.example.hwysapp.R;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.SpUtil;
+import com.example.hwysapp.utils.TipDialogUti;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -74,9 +75,11 @@ public class KhxzActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                showAlertDialog("新增客户成功！");
+                                TipDialogUti.succss(mContext,"新增客户成功！");
                                 setResult(1);
-                            } else {
+                            } else if(flag.equals("2")){
+                                showAlertDialog("该用户已存在，请不要重复添加！");
+                            }else {
                                 showAlertDialog("新增失败,请联系管理员！");
                             }
                         } catch (JSONException e) {

@@ -4,18 +4,60 @@
     android:layout_height="match_parent"
     tools:context="com.example.hwysapp.fragment.Fragment3">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.hwysapp.ui.TempActivity">
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_jcgx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/jcgx" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/title_text"
+                android:gravity="center_vertical"
+                android:text="检查更新"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
         <TextView
-            android:textSize="18sp"
-            android:layout_centerInParent="true"
-            android:text="功能正在开发中，请耐心等待"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
+            android:background="@color/divider"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></TextView>
+        <LinearLayout
+            android:id="@+id/ll_zxzh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/zxzh" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/title_text"
+                android:gravity="center_vertical"
+                android:text="注销账号"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

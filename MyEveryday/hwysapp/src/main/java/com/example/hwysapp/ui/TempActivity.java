@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.example.hwysapp.R;
 
-public class TempActivity extends BaseActivity {
+public class TempActivity extends BaseFragmentActivity {
 
 
     @Override

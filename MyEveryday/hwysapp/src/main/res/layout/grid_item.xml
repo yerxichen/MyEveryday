@@ -15,7 +15,7 @@
             android:layout_below="@id/img"
             android:id="@+id/tv"
             android:text="客户管理"
-
+            style="@style/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -45,5 +45,7 @@ dependencies {
     compile 'com.contrarywind:Android-PickerView:3.2.7'
     compile 'com.blankj:utilcode:1.9.9'
     compile 'com.qmuiteam:qmui:1.0.6'
+//    compile 'com.zhy:base-rvadapter:3.0.3'
+//    compile 'com.zhy:base-adapter:3.0.3'
 //    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 }

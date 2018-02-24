@@ -1,6 +1,5 @@
 package com.example.hwysapp.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,7 +25,7 @@ import com.example.hwysapp.utils.SpUtil;
  * Created by 87990 on 2017/12/4.
  */
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseFragmentActivity extends FragmentActivity {
     /** 是否沉浸状态栏 **/
     private boolean isSetStatusBar = true;
     /** 是否允许全屏 **/
@@ -171,7 +170,7 @@ public abstract class BaseActivity extends Activity {
      * @param clz
      */
     public void startActivity(Class<?> clz) {
-        startActivity(new Intent(BaseActivity.this,clz));
+        startActivity(new Intent(BaseFragmentActivity.this,clz));
     }
 
     /**

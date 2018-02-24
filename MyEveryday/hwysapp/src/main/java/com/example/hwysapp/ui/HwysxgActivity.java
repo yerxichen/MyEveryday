@@ -9,9 +9,7 @@ import android.widget.Spinner;
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
 import com.bigkoo.pickerview.TimePickerView;
-import com.blankj.utilcode.util.TimeUtils;
 import com.example.hwysapp.R;
-import com.example.hwysapp.adapter.DdlbAdapter;
 import com.example.hwysapp.adapter.MySpinnerAdapter;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.DateUtil;
@@ -25,15 +23,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-public class HwysxzActivity extends BaseActivity {
+public class HwysxgActivity extends BaseActivity {
 
-    private BootstrapEditText ed1,ed2,ed3;
-    private BootstrapButton button,btnadd;
-    private Spinner spinner1,spinner2;
-    private String khxm,yssj,ysqd="",yszd="",jg,bz;
+    private BootstrapEditText ed1, ed2, ed3;
+    private BootstrapButton button, btnadd;
+    private Spinner spinner1, spinner2;
+    private String id, yssj, ysqd = "", yszd = "", jg, bz;
     private TimePickerView pvTime;
     private JSONArray mArray;
     private MySpinnerAdapter adapter;
@@ -41,12 +38,17 @@ public class HwysxzActivity extends BaseActivity {
 
     @Override
     public void initParms(Bundle parms) {
-        khxm=parms.getString("khxm");
+        id = parms.getString("id");
+        yssj = parms.getString("yssj");
+        ysqd = parms.getString("ysqd");
+        yszd = parms.getString("yszd");
+        jg = parms.getString("jg");
+        bz = parms.getString("bz");
     }
 
     @Override
     public void bindView() {
-        setView("客户:"+khxm, R.layout.activity_hwysxz);
+        setView("账单修改", R.layout.activity_hwysxg);
 
     }
 
@@ -56,23 +58,26 @@ public class HwysxzActivity extends BaseActivity {
         ed1 = findViewById(R.id.ed1);
         ed2 = findViewById(R.id.ed2);
         ed3 = findViewById(R.id.ed3);
-        spinner1=findViewById(R.id.spinner1);
-        spinner2=findViewById(R.id.spinner2);
+        ed1.setText(yssj);
+        ed2.setText(jg);
+        ed3.setText(bz);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.spinner2);
         button = findViewById(R.id.btn);
-        btnadd=findViewById(R.id.btn_add);
+        btnadd = findViewById(R.id.btn_add);
     }
 
     @Override
     public void doBusiness() {
-        mArray=new JSONArray();
-        adapter=new MySpinnerAdapter(mContext,mArray);
+        mArray = new JSONArray();
+        adapter = new MySpinnerAdapter(mContext, mArray);
         spinner1.setAdapter(adapter);
         spinner2.setAdapter(adapter);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
-                    ysqd=mArray.getJSONObject(i).getString("ddmc");
+                    ysqd = mArray.getJSONObject(i).getString("ddmc");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -87,7 +92,7 @@ public class HwysxzActivity extends BaseActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
-                    yszd=mArray.getJSONObject(i).getString("ddmc");
+                    yszd = mArray.getJSONObject(i).getString("ddmc");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -99,12 +104,12 @@ public class HwysxzActivity extends BaseActivity {
             }
         });
         //时间选择器
-         pvTime = new TimePickerView.Builder(mContext, new TimePickerView.OnTimeSelectListener() {
+        pvTime = new TimePickerView.Builder(mContext, new TimePickerView.OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {//选中事件回调
                 ed1.setText(DateUtil.getDateFormat(date));
             }
-        }).setType(new boolean[]{true,true,true,false,false,false}).setRange(2000,2050).build();
+        }).setType(new boolean[]{true, true, true, false, false, false}).setRange(2000, 2050).build();
 
         ed1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,8 +121,8 @@ public class HwysxzActivity extends BaseActivity {
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in=new Intent(mContext,DdxzActivity.class);
-                startActivityForResult(in,1);
+                Intent in = new Intent(mContext, DdxzActivity.class);
+                startActivityForResult(in, 1);
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
@@ -127,34 +132,31 @@ public class HwysxzActivity extends BaseActivity {
                 jg = ed2.getText().toString().trim();
                 bz = ed3.getText().toString().trim();
                 if ("".equals(yssj)) {
-                    TipDialogUti.fail(mContext,"运输日期不能为空！");
+                    showAlertDialog("运输日期不能为空！");
                     return;
                 }
-                if ("".equals(jg)) {
-                    TipDialogUti.fail(mContext,"价格不能为空！");
-                    return;
-                }
+
                 if ("".equals(ysqd)) {
-                    TipDialogUti.fail(mContext,"运输起点不能为空！");
+                    showAlertDialog("运输起点不能为空！");
                     return;
                 }
                 if ("".equals(yszd)) {
-                    TipDialogUti.fail(mContext,"运输终点不能为空！");
+                    showAlertDialog("运输终点不能为空！");
                     return;
                 }
-                hwysxz();
+                hwysxg();
             }
         });
 
         getData();
     }
 
-    public void hwysxz() {
+    public void hwysxg() {
         showProgressDialog("操作进行中，请稍后...", true);
-        OkGo.<String>post(Constants.URL + "hwys/hwysxz.do")
+        OkGo.<String>post(Constants.URL + "hwys/hwysxg.do")
                 .tag(this)
                 .params("yhm", SpUtil.get(mContext, "YHM", "").toString())
-                .params("khxm", khxm)
+                .params("id", id)
                 .params("yssj", yssj)
                 .params("ysqd", ysqd)
                 .params("yszd", yszd)
@@ -169,12 +171,12 @@ public class HwysxzActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                TipDialogUti.succss(mContext,"新增成功！");
-                                SpUtil.put(mContext,"ysqd",ysqd);
-                                SpUtil.put(mContext,"yszd",yszd);
+                                TipDialogUti.succss(mContext,"修改成功！");
+                                SpUtil.put(mContext, "ysqd", ysqd);
+                                SpUtil.put(mContext, "yszd", yszd);
                                 setResult(1);
                             } else {
-                                showAlertDialog("新增失败,请联系管理员！");
+                                TipDialogUti.fail(mContext,"修改失败！请联系管理员");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -191,43 +193,42 @@ public class HwysxzActivity extends BaseActivity {
                 });
     }
 
-    public void getData(){
-        showProgressDialog("数据初始化中...",true);
-        OkGo.<String>post(Constants.URL+"dd/queryDd.do")
+    public void getData() {
+        showProgressDialog("数据初始化中...", true);
+        OkGo.<String>post(Constants.URL + "dd/queryDd.do")
                 .tag(this)
-                .params("yhm", SpUtil.get(mContext,"YHM","").toString())
+                .params("yhm", SpUtil.get(mContext, "YHM", "").toString())
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
                         dismissProgressDialog();
                         try {
-                            String s=response.body().toString();
-                            JSONObject obj=new JSONObject(s);
-                            String flag=obj.getString("FLAG");
-                            if(flag.equals("1")){
-                                JSONArray arr=obj.getJSONArray("DATA");
-                                mArray=arr;
-                                adapter=new MySpinnerAdapter(mContext,mArray);
+                            String s = response.body().toString();
+                            JSONObject obj = new JSONObject(s);
+                            String flag = obj.getString("FLAG");
+                            if (flag.equals("1")) {
+                                JSONArray arr = obj.getJSONArray("DATA");
+                                mArray = arr;
+                                adapter = new MySpinnerAdapter(mContext, mArray);
                                 spinner1.setAdapter(adapter);
-                                if (SpUtil.contains(mContext,"ysqd")){
-                                    String s1=SpUtil.get(mContext,"ysqd","").toString();
-                                    for(int i=0;i<mArray.length();i++){
-                                        if(s1.equals(mArray.getJSONObject(i).getString("ddmc"))){
-                                            spinner1.setSelection(i);
-                                        }
-                                    }
-                                }
-                                spinner2.setAdapter(adapter);
-                                if (SpUtil.contains(mContext,"yszd")){
-                                    String s1=SpUtil.get(mContext,"yszd","").toString();
-                                    for(int i=0;i<mArray.length();i++){
-                                        if(s1.equals(mArray.getJSONObject(i).getString("ddmc"))){
-                                            spinner2.setSelection(i);
-                                        }
+                                String s1 = ysqd;
+                                for (int i = 0; i < mArray.length(); i++) {
+                                    if (s1.equals(mArray.getJSONObject(i).getString("ddmc"))) {
+                                        spinner1.setSelection(i);
                                     }
                                 }
 
-                            }else{
+                                spinner2.setAdapter(adapter);
+
+                                String s2 = yszd;
+                                for (int i = 0; i < mArray.length(); i++) {
+                                    if (s2.equals(mArray.getJSONObject(i).getString("ddmc"))) {
+                                        spinner2.setSelection(i);
+                                    }
+                                }
+
+
+                            } else {
                                 showAlertDialog("初始化失败,请联系管理员");
                             }
                         } catch (JSONException e) {
@@ -249,7 +250,7 @@ public class HwysxzActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==1){
+        if (requestCode == 1) {
             getData();
         }
     }

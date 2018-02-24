@@ -1,5 +1,7 @@
 package com.example.hwysapp.ui;
 
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.hwysapp.R;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseFragmentActivity {
     private ViewPager viewPager;
     private BottomNavigationView navigation;
     private List<Fragment> fragments=new ArrayList<>();
