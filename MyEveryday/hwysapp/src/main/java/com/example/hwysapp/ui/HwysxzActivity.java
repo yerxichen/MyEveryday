@@ -6,32 +6,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
 import com.bigkoo.pickerview.TimePickerView;
-import com.blankj.utilcode.util.TimeUtils;
 import com.example.hwysapp.R;
-import com.example.hwysapp.adapter.DdlbAdapter;
 import com.example.hwysapp.adapter.MySpinnerAdapter;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.DateUtil;
 import com.example.hwysapp.utils.SpUtil;
-import com.example.hwysapp.utils.TipDialogUti;
+import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class HwysxzActivity extends BaseActivity {
 
     private BootstrapEditText ed1,ed2,ed3;
-    private BootstrapButton button,btnadd;
+    private QMUIRoundButton button,btnadd;
     private Spinner spinner1,spinner2;
     private String khxm,yssj,ysqd="",yszd="",jg,bz;
     private TimePickerView pvTime;
@@ -127,19 +124,15 @@ public class HwysxzActivity extends BaseActivity {
                 jg = ed2.getText().toString().trim();
                 bz = ed3.getText().toString().trim();
                 if ("".equals(yssj)) {
-                    TipDialogUti.fail(mContext,"运输日期不能为空！");
-                    return;
-                }
-                if ("".equals(jg)) {
-                    TipDialogUti.fail(mContext,"价格不能为空！");
+                    TipDialogUtil.fail(mContext,"运输日期不能为空！");
                     return;
                 }
                 if ("".equals(ysqd)) {
-                    TipDialogUti.fail(mContext,"运输起点不能为空！");
+                    TipDialogUtil.fail(mContext,"运输起点不能为空！");
                     return;
                 }
                 if ("".equals(yszd)) {
-                    TipDialogUti.fail(mContext,"运输终点不能为空！");
+                    TipDialogUtil.fail(mContext,"运输终点不能为空！");
                     return;
                 }
                 hwysxz();
@@ -169,7 +162,7 @@ public class HwysxzActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                TipDialogUti.succss(mContext,"新增成功！");
+                                TipDialogUtil.succss(mContext,"新增成功！");
                                 SpUtil.put(mContext,"ysqd",ysqd);
                                 SpUtil.put(mContext,"yszd",yszd);
                                 setResult(1);

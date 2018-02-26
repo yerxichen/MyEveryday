@@ -19,30 +19,33 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
 
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="运输行程"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:bootstrapText="运输行程"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:layout_height="50dp" />
             <LinearLayout
                 android:gravity="right|center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
-                <com.beardedhen.androidbootstrap.BootstrapButton
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    app:qmui_borderColor="@color/red"
+                    android:textColor="@color/red"
+                    android:padding="5dp"
                     android:id="@+id/btn_add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:qmui_radiusTopLeft="1dp"
+                    app:qmui_radiusBottomLeft="1dp"
+                    app:qmui_radiusTopRight="1dp"
+                    app:qmui_radiusBottomRight="1dp"
                     android:text="添加新地址+"
-                    app:bootstrapBrand="danger"
-                    app:bootstrapSize="md"
-                    app:buttonMode="regular"
-                    app:showOutline="true"
-                    app:roundedCorners="false"
-                    />
-
+                    style="@style/title_text" />
 
             </LinearLayout>
 
@@ -56,16 +59,15 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-                style="@style/title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
                 android:textStyle="bold"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5"
-                app:bootstrapText="从"
-                app:roundedCorners="false" />
+                style="@style/title_text"
+                android:text="从"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
 
             <Spinner
                 android:backgroundTint="@color/gray"
@@ -74,15 +76,15 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"></Spinner>
 
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-                style="@style/title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
                 android:textStyle="bold"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5"
-                app:bootstrapText="到"
-                app:roundedCorners="false" />
+                style="@style/title_text"
+                android:text="到"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
 
             <Spinner
                 android:backgroundTint="@color/gray"
@@ -99,14 +101,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="运输日期"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:bootstrapText="运输日期"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 app:bootstrapSize="md"
@@ -128,14 +131,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="价        格"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:bootstrapText="价        格"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 app:bootstrapSize="md"
@@ -152,15 +156,15 @@
 
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="备        注"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:bootstrapText="备        注"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:layout_height="50dp" />
 
 
         </LinearLayout>
@@ -186,14 +190,16 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-           <com.beardedhen.androidbootstrap.BootstrapButton
-               android:id="@+id/btn"
-               android:text="添        加"
-               app:roundedCorners="true"
-               app:bootstrapSize="md"
-               app:bootstrapBrand="primary"
-               android:layout_width="match_parent"
-               android:layout_height="50dp" />
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                app:qmui_radiusTopLeft="10dp"
+                app:qmui_radiusBottomLeft="10dp"
+                app:qmui_radiusTopRight="10dp"
+                app:qmui_radiusBottomRight="10dp"
+                android:id="@+id/btn"
+                android:text="确        定"
+                style="@style/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
         </LinearLayout>
 

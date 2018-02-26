@@ -14,7 +14,7 @@ import com.example.hwysapp.adapter.MySpinnerAdapter;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.DateUtil;
 import com.example.hwysapp.utils.SpUtil;
-import com.example.hwysapp.utils.TipDialogUti;
+import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -171,12 +171,12 @@ public class HwysxgActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                TipDialogUti.succss(mContext,"修改成功！");
+                                TipDialogUtil.succss(mContext,"修改成功！");
                                 SpUtil.put(mContext, "ysqd", ysqd);
                                 SpUtil.put(mContext, "yszd", yszd);
                                 setResult(1);
                             } else {
-                                TipDialogUti.fail(mContext,"修改失败！请联系管理员");
+                                TipDialogUtil.fail(mContext,"修改失败！请联系管理员");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

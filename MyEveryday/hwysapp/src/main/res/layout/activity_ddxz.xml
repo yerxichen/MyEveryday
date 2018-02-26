@@ -17,15 +17,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                app:bootstrapText="地点名称"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h4" />
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="地点名称"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 android:id="@+id/ed"
@@ -41,15 +41,17 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-           <com.beardedhen.androidbootstrap.BootstrapButton
-               android:id="@+id/btn"
-               android:text="添        加"
-               android:textSize="30sp"
-               app:bootstrapSize="lg"
-               app:bootstrapBrand="primary"
-               android:layout_width="match_parent"
-               android:layout_height="50dp" />
 
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                app:qmui_radiusTopLeft="10dp"
+                app:qmui_radiusBottomLeft="10dp"
+                app:qmui_radiusTopRight="10dp"
+                app:qmui_radiusBottomRight="10dp"
+                android:id="@+id/btn"
+                android:text="添        加"
+                style="@style/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
         </LinearLayout>
 
 

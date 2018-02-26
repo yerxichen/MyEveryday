@@ -2,17 +2,16 @@ package com.example.hwysapp.ui;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
 import com.example.hwysapp.R;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.SpUtil;
-import com.example.hwysapp.utils.TipDialogUti;
+import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +19,7 @@ import org.json.JSONObject;
 public class DdxzActivity extends BaseActivity {
 
     private BootstrapEditText ed;
-    private BootstrapButton button;
+    private QMUIRoundButton button;
     private String ddmc;
 
     @Override
@@ -73,7 +72,7 @@ public class DdxzActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                TipDialogUti.succss(mContext,"新增地点成功！");
+                                TipDialogUtil.succss(mContext,"新增地点成功！");
                                 setResult(1);
                             } else if(flag.equals("2")){
                                 showAlertDialog("该地址已存在，请不要重复添加！");

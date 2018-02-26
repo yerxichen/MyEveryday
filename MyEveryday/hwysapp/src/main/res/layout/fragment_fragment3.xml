@@ -7,7 +7,7 @@
     <LinearLayout
         android:background="@color/white"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -29,6 +29,32 @@
                 style="@style/title_text"
                 android:gravity="center_vertical"
                 android:text="检查更新"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <TextView
+            android:background="@color/divider"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></TextView>
+        <LinearLayout
+            android:id="@+id/ll_ztgg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/ztgg" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/title_text"
+                android:gravity="center_vertical"
+                android:text="字体更改"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp" />
         </LinearLayout>

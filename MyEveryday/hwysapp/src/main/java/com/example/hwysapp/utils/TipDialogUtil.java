@@ -12,7 +12,7 @@ import java.util.TimerTask;
  * Created by 87990 on 2018/2/24.
  */
 
-public class TipDialogUti {
+public class TipDialogUtil {
 
     public static void succss(Context mContext, String text) {
         final QMUITipDialog tipDialog = new QMUITipDialog.Builder(mContext)
@@ -55,4 +55,16 @@ public class TipDialogUti {
             }
         }, 1500);//五百毫秒
     }
+    public static void showLoading(Context mContext, QMUITipDialog tipDialog,String text) {
+        tipDialog = new QMUITipDialog.Builder(mContext)
+                .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+                .setTipWord(text)
+                .create();
+        tipDialog.show();
+    }
+
+    public static void dismisLoading(Context mContext, QMUITipDialog tipDialog) {
+        tipDialog.dismiss();
+    }
+
 }

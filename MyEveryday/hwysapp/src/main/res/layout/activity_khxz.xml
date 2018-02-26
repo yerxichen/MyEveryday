@@ -17,15 +17,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                app:bootstrapText="客户姓名"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="客户姓名"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 android:id="@+id/ed1"
@@ -41,15 +41,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <com.beardedhen.androidbootstrap.BootstrapLabel
-
+            <TextView
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                app:bootstrapText="客户电话"
-                app:roundedCorners="false"
-                app:bootstrapBrand="secondary"
-                app:bootstrapHeading="h5" />
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                style="@style/title_text"
+                android:text="客户电话"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 android:id="@+id/ed2"
@@ -67,14 +67,16 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-           <com.beardedhen.androidbootstrap.BootstrapButton
-               android:id="@+id/btn"
-               android:text="添        加"
-               android:textSize="30sp"
-               app:bootstrapSize="md"
-               app:bootstrapBrand="primary"
-               android:layout_width="match_parent"
-               android:layout_height="50dp" />
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                app:qmui_radiusTopLeft="10dp"
+                app:qmui_radiusBottomLeft="10dp"
+                app:qmui_radiusTopRight="10dp"
+                app:qmui_radiusBottomRight="10dp"
+                android:id="@+id/btn"
+                android:text="确      定"
+                style="@style/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
         </LinearLayout>
 

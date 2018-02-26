@@ -6,24 +6,20 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.hwysapp.R;
 import com.example.hwysapp.adapter.ArrSpinnerAdapter;
 import com.example.hwysapp.adapter.CzlbAdapter;
-import com.example.hwysapp.adapter.DdlbAdapter;
 import com.example.hwysapp.adapter.KhxmSpinnerAdapter;
-import com.example.hwysapp.adapter.MySpinnerAdapter;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.SpUtil;
-import com.example.hwysapp.utils.TipDialogUti;
+import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -243,7 +239,7 @@ public class CzlbActivity extends BaseActivity {
 
                                 } else {
                                     adapter.notifyDataSetChanged();
-                                    TipDialogUti.succss(mContext,"无数据！");
+                                    TipDialogUtil.succss(mContext,"无数据！");
                                 }
 
 
@@ -280,11 +276,11 @@ public class CzlbActivity extends BaseActivity {
                             JSONObject obj = new JSONObject(s);
                             String flag = obj.getString("FLAG");
                             if (flag.equals("1")) {
-                                TipDialogUti.succss(mContext,"删除成功！");
+                                TipDialogUtil.succss(mContext,"删除成功！");
 
                                 getData();
                             } else {
-                                TipDialogUti.succss(mContext,"删除失败,请联系管理员！");
+                                TipDialogUtil.succss(mContext,"删除失败,请联系管理员！");
 
                             }
                         } catch (JSONException e) {

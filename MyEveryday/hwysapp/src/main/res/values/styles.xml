@@ -24,22 +24,22 @@
         <item name="android:windowIsFloating">true</item>
     </style>
     <style name="font_theme_sm">
-        <item name="fontsize_1">10sp</item>
-        <item name="fontsize_2">12sp</item>
-        <item name="fontsize_3">14sp</item>
-        <item name="fontsize_4">35sp</item>
+        <item name="fontsize_1">8sp</item>
+        <item name="fontsize_2">10sp</item>
+        <item name="fontsize_3">12sp</item>
+        <item name="fontsize_4">24sp</item>
     </style>
     <style name="font_theme_md">
         <item name="fontsize_1">14sp</item>
         <item name="fontsize_2">16sp</item>
         <item name="fontsize_3">18sp</item>
-        <item name="fontsize_4">40sp</item>
+        <item name="fontsize_4">36sp</item>
     </style>
     <style name="font_theme_lg">
         <item name="fontsize_1">18sp</item>
         <item name="fontsize_2">20sp</item>
         <item name="fontsize_3">22sp</item>
-        <item name="fontsize_4">50sp</item>
+        <item name="fontsize_4">44sp</item>
     </style>
     <!-- 为相应的控件设置style -->
     <style name="simal_text">

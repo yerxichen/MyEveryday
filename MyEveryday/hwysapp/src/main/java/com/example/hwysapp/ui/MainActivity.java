@@ -1,7 +1,7 @@
 package com.example.hwysapp.ui;
 
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +22,18 @@ import com.example.hwysapp.fragment.Fragment3;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.hwysapp.R;
+import com.example.hwysapp.utils.CommonUtil;
+import com.example.hwysapp.utils.Constants;
+import com.example.hwysapp.utils.SpUtil;
+import com.example.hwysapp.utils.TipDialogUtil;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
+import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends BaseFragmentActivity {
     private ViewPager viewPager;
@@ -67,6 +78,7 @@ public class MainActivity extends BaseFragmentActivity {
 
     @Override
     public void initView() {
+        getUpdate();
         fragment1=new Fragment1();
         fragment2=new Fragment2();
         fragment3=new Fragment3();
@@ -121,5 +133,65 @@ public class MainActivity extends BaseFragmentActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+
+    public void getUpdate() {
+        OkGo.<String>post(Constants.URL + "version/getVersionInfo.do")
+                .tag(this)
+                .params("yhm", SpUtil.get(mContext, "YHM", "").toString())
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+
+                        try {
+                            String s = response.body().toString();
+                            JSONObject obj = new JSONObject(s);
+                            int code = obj.getInt("CODE");
+                            if(code> CommonUtil.getVersionCode(mContext)){
+                                showMessagePositiveDialog();
+                            }else{
+                                //TipDialogUtil.succss(mContext,"已经是最新版本");
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+//                        Log.d(TAG, "onSuccess: "+response.body().toString());
+                    }
+
+                    @Override
+                    public void onError(Response<String> response) {
+                        super.onError(response);
+
+                    }
+                });
+    }
+
+
+
+    private void showMessagePositiveDialog() {
+        new QMUIDialog.MessageDialogBuilder(mContext)
+                .setTitle("提示")
+                .setMessage("发现新版本")
+                .addAction("以后再说", new QMUIDialogAction.ActionListener() {
+                    @Override
+                    public void onClick(QMUIDialog dialog, int index) {
+                        dialog.dismiss();
+                    }
+                })
+                .addAction("立即更新", new QMUIDialogAction.ActionListener() {
+                    @Override
+                    public void onClick(QMUIDialog dialog, int index) {
+                        dialog.dismiss();
+
+                        Intent intent = new Intent();
+                        intent.setAction("android.intent.action.VIEW");
+                        Uri content_url = Uri.parse(Constants.APKURL);
+                        intent.setData(content_url);
+                        startActivity(intent);
+
+                    }
+                })
+                .show();
     }
 }
