@@ -171,14 +171,17 @@ public class CzlbActivity extends BaseActivity {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 JSONObject obj = (JSONObject) adapter.getData().get(position);
                 try {
-                    String bz = obj.getString("bz");
-                    initNormalPopupIfNeed(bz);
-                    mNormalPopup.setAnimStyle(QMUIPopup.ANIM_GROW_FROM_CENTER);
-                    mNormalPopup.setPreferredDirection(QMUIPopup.DIRECTION_NONE);
-                    mNormalPopup.show(view);
+                    String id = obj.getString("id");
+                    String yssj=obj.getString("yssj");
+                    String ysqd=obj.getString("ysqd");
+                    String yszd=obj.getString("yszd");
+                    String jg=obj.getString("jg");
+                    String bz=obj.getString("bz");
+                    showSimpleBottomSheetList(id,yssj,ysqd,yszd,jg,bz);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
 
 
             }
@@ -188,13 +191,11 @@ public class CzlbActivity extends BaseActivity {
             public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
                 JSONObject obj = (JSONObject) adapter.getData().get(position);
                 try {
-                    String id = obj.getString("id");
-                    String yssj=obj.getString("yssj");
-                    String ysqd=obj.getString("ysqd");
-                    String yszd=obj.getString("yszd");
-                    String jg=obj.getString("jg");
-                    String bz=obj.getString("bz");
-                    showSimpleBottomSheetList(id,yssj,ysqd,yszd,jg,bz);
+                    String bz = obj.getString("bz");
+                    initNormalPopupIfNeed(bz);
+                    mNormalPopup.setAnimStyle(QMUIPopup.ANIM_GROW_FROM_CENTER);
+                    mNormalPopup.setPreferredDirection(QMUIPopup.DIRECTION_NONE);
+                    mNormalPopup.show(view);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -348,8 +349,8 @@ public class CzlbActivity extends BaseActivity {
 
     private void showSimpleBottomSheetList(final String id,final String yssj,final String ysqd,final String yszd,final String jg,final String bz) {
         new QMUIBottomSheet.BottomListSheetBuilder(mContext)
-                .addItem("修改")
-                .addItem("删除")
+                .addItem(R.drawable.xg,"修改","")
+                .addItem(R.drawable.sc,"删除","")
                 .setOnSheetItemClickListener(new QMUIBottomSheet.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
                     public void onClick(QMUIBottomSheet dialog, View itemView, int position, String tag) {

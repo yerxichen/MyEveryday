@@ -3,8 +3,6 @@ package com.example.hwysapp.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +10,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.hwysapp.R;
-import com.example.hwysapp.adapter.KhlbAdapter;
 import com.example.hwysapp.adapter.MyGridViewAdapter;
 import com.example.hwysapp.entity.GridItem;
 import com.example.hwysapp.ui.CzlbActivity;
-import com.example.hwysapp.ui.DdActivity;
 import com.example.hwysapp.ui.KhlbActivity;
-import com.example.hwysapp.ui.TempActivity;
-import com.example.hwysapp.utils.Constants;
-import com.example.hwysapp.utils.SpUtil;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;

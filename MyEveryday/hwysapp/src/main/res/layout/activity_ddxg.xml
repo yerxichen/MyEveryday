@@ -23,41 +23,14 @@
                 android:gravity="center_vertical"
                 android:textStyle="bold"
                 style="@style/title_text"
-                android:text="客户姓名"
+                android:text="地点名称"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/ed1"
+                android:id="@+id/ed"
                 android:inputType="text"
-                android:hint="请输入客户姓名"
-                app:bootstrapSize="md"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:visibility="gone"
-            android:layout_margin="10dp"
-
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                style="@style/title_text"
-                android:text="客户电话"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp" />
-
-            <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/ed2"
-                android:inputType="number"
-                android:maxLength="11"
-                android:hint="请输入客户手机号码"
-                app:bootstrapSize="md"
+                android:hint="请输入地址"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
         </LinearLayout>
@@ -68,17 +41,17 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp">
+
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 app:qmui_radiusTopLeft="10dp"
                 app:qmui_radiusBottomLeft="10dp"
                 app:qmui_radiusTopRight="10dp"
                 app:qmui_radiusBottomRight="10dp"
                 android:id="@+id/btn"
-                android:text="确      定"
+                android:text="保存修改"
                 style="@style/title_text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
-
         </LinearLayout>
 
 

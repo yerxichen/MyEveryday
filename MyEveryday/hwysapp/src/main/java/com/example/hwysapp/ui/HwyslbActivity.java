@@ -8,10 +8,10 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.hwysapp.R;
-import com.example.hwysapp.adapter.DdlbAdapter;
-import com.example.hwysapp.adapter.KhlbAdapter;
+import com.example.hwysapp.adapter.HwysKhlbAdapter;
 import com.example.hwysapp.utils.Constants;
 import com.example.hwysapp.utils.SpUtil;
+import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -26,7 +26,7 @@ import java.util.List;
 public class HwyslbActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
-    private KhlbAdapter adapter;
+    private HwysKhlbAdapter adapter;
     private List<JSONObject> mList=new ArrayList<>();
     @Override
     public void initParms(Bundle parms) {
@@ -35,7 +35,7 @@ public class HwyslbActivity extends BaseActivity {
 
     @Override
     public void bindView() {
-        setView("客户列表",R.layout.activity_khlb);
+        setView("我要记账",R.layout.activity_hwys_khlb);
 
     }
 
@@ -57,7 +57,7 @@ public class HwyslbActivity extends BaseActivity {
        });
 
        recyclerView.setLayoutManager(new GridLayoutManager(mContext,3));
-       recyclerView.setAdapter(adapter=new KhlbAdapter(R.layout.activity_khlb_item,mList));
+       recyclerView.setAdapter(adapter=new HwysKhlbAdapter(R.layout.activity_hwys_khlb_item,mList));
        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
            @Override
            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -83,11 +83,17 @@ public class HwyslbActivity extends BaseActivity {
                             String flag=obj.getString("FLAG");
                             if(flag.equals("1")){
                                 JSONArray arr=obj.getJSONArray("DATA");
-                                for(int i=0;i<arr.length();i++){
-                                    //mList.add(arr.getJSONObject(i));
-                                    adapter.addData(arr.getJSONObject(i));
+                                mList.clear();
+                                if(arr.length()>0){
+                                    for(int i=0;i<arr.length();i++){
+                                        mList.add(arr.getJSONObject(i));
+                                    }
+                                }else {
+                                    TipDialogUtil.succss(mContext,"无数据！");
+
                                 }
 
+                                adapter.notifyDataSetChanged();
                             }else{
                                 showAlertDialog("查询失败,请联系管理员");
                             }
@@ -112,8 +118,7 @@ public class HwyslbActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==1){
-            mList=new ArrayList<>();
-            recyclerView.setAdapter(adapter=new KhlbAdapter(R.layout.activity_khlb_item,mList));
+            getData();
 
         }
     }
