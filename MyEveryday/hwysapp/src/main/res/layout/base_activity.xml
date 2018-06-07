@@ -35,16 +35,6 @@
             android:textColor="@color/white"
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/back" />
-
-    </RelativeLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:background="@color/colorf0f0f0"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/relativeLayout" >
-
         <TextView
             android:id="@+id/add"
             style="@style/title_text"
@@ -55,6 +45,16 @@
             android:text="      +    "
             android:textColor="@color/white"
             android:visibility="gone" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:background="@color/colorf0f0f0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout" >
+
+
     </FrameLayout>
 
 </RelativeLayout>

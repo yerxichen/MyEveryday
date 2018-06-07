@@ -10,6 +10,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.hwysapp.R;
 import com.example.hwysapp.adapter.HwysKhlbAdapter;
 import com.example.hwysapp.utils.Constants;
+import com.example.hwysapp.utils.DividerGridItemDecoration;
 import com.example.hwysapp.utils.SpUtil;
 import com.example.hwysapp.utils.TipDialogUtil;
 import com.lzy.okgo.OkGo;
@@ -57,12 +58,21 @@ public class HwyslbActivity extends BaseActivity {
        });
 
        recyclerView.setLayoutManager(new GridLayoutManager(mContext,3));
+       recyclerView.addItemDecoration(new DividerGridItemDecoration(mContext));
        recyclerView.setAdapter(adapter=new HwysKhlbAdapter(R.layout.activity_hwys_khlb_item,mList));
        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
            @Override
            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-               Intent in=new Intent(mContext,TempActivity.class);
-               startActivity(in);
+               Intent in=new Intent(mContext,HwysxzActivity.class);
+               try {
+                   JSONObject obj= (JSONObject) adapter.getData().get(position);
+                   String khxm=obj.getString("khxm");
+                   in.putExtra("khxm",khxm);
+                   startActivity(in);
+               } catch (JSONException e) {
+                   e.printStackTrace();
+               }
+
            }
        });
        getData();

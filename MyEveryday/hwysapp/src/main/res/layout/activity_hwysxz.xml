@@ -34,8 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
                 <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    app:qmui_borderColor="@color/red"
-                    android:textColor="@color/red"
+                    app:qmui_borderColor="@color/crimson"
+                    android:textColor="@color/crimson"
                     android:padding="5dp"
                     android:id="@+id/btn_add"
                     android:layout_width="wrap_content"

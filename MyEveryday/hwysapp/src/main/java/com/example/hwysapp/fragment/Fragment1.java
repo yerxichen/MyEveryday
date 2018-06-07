@@ -13,6 +13,7 @@ import com.example.hwysapp.R;
 import com.example.hwysapp.adapter.MyGridViewAdapter;
 import com.example.hwysapp.entity.GridItem;
 import com.example.hwysapp.ui.CzlbActivity;
+import com.example.hwysapp.ui.HwyslbActivity;
 import com.example.hwysapp.ui.KhlbActivity;
 
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class Fragment1 extends Fragment {
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             switch (i){
                 case 0:
-                    Intent in=new Intent(getActivity(), KhlbActivity.class);
+                    Intent in=new Intent(getActivity(), HwyslbActivity.class);
                     startActivity(in);
                     break;
                 case 1:
